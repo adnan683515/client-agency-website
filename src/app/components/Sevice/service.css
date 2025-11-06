@@ -1,0 +1,16 @@
+.vertical-rounded {
+    --r: 30px;
+    /* control the radius */
+
+    line-height: 1.7;
+    /* control the height */
+    padding-inline: .5em;
+    border-block: var(--r) solid #0000;
+    border-radius: var(--r) 0 0 var(--r)/calc(2*var(--r));
+    mask:
+        radial-gradient(var(--r) at 0 var(--r), #0000 98%, #000 101%) 100% calc(-1*var(--r))/var(--r) 100% repeat-y,
+        conic-gradient(#000 0 0) padding-box;
+    background: #00A0B0 border-box;
+    /* border-box is needed for a gradient coloration */
+    width: fit-content;
+}

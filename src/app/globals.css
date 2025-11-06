@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+
+:root {
+  --color-primary: #335EEB;
+  --color-secondary: #479F75;
+  --color-bit: #F1AF56;
+  /* --color--accent */
+}
+
+/* blue 335EEB */
+/* bit F1AF56 */
+
+/* green 479F75 */
