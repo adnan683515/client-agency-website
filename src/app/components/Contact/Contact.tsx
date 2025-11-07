@@ -4,7 +4,7 @@ export default function Contact() {
     return (
         <section
             id="contact"
-            className="w-full  py-10 px-0 max-w-[90%] mx-auto sm:px-6 lg:px-0"
+            className="max-w-[1400px]  py-10 px-2  mx-auto sm:px-6 lg:px-0"
         >
 
             <div className="text-center max-w-3xl mx-auto mb-12">

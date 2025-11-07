@@ -2,16 +2,22 @@ import React from 'react';
 import logo from '../../assets/logo.png'
 import Image from 'next/image';
 import Link from 'next/link';
+import { useMyContext } from '../../context/MyContext';
 
 export default function Footer() {
+
+
+    const { aboutRef,
+        contactRef,
+        serviceRef, goToProjectSection, homeRef } = useMyContext()
     return (
         <footer className="bg-black/90  backdrop-blur-lg text-white py-10 ">
-            <div className="max-w-[90%] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="max-w-[1400px] p-2 sm:p-0 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
                 <div>
 
-                    <Link href={'/'}>
-                        <Image src={logo} width={140} height={140} alt='footer-image'></Image></Link>
+
+                    <Image onClick={() => goToProjectSection(homeRef)} src={logo} width={140} height={140} alt='footer-image'></Image>
                     <p className="text-sm text-gray-200">
                         We craft stunning digital experiences for modern businesses. Let's bring your ideas to life!
                     </p>
@@ -21,14 +27,13 @@ export default function Footer() {
                 <div>
                     <h2 className="text-xl font-bold mb-4">Quick Links</h2>
                     <ul className="space-y-2 text-gray-200">
-                        <li><a href="#" className="hover:text-white transition-colors">Home</a></li>
-                        <li><a href="#" className="hover:text-white transition-colors">Services</a></li>
 
-                        <li><a href="#" className="hover:text-white transition-colors">Contact</a></li>
+                        <li onClick={() => goToProjectSection(aboutRef)}>About</li>
+                        <li onClick={() => goToProjectSection(serviceRef)}>Services</li>
+                        <li onClick={() => goToProjectSection(contactRef)}>Contact</li>
                     </ul>
                 </div>
 
-                {/* Contact Info */}
                 <div>
                     <h2 className="text-xl font-bold mb-4">Contact</h2>
                     <p className="text-gray-200 mb-2">123 Agency St., New York, NY</p>

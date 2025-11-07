@@ -7,6 +7,7 @@ type MyContextValue = {
     aboutRef: RefObject<HTMLDivElement>;
     contactRef: RefObject<HTMLDivElement>;
     serviceRef: RefObject<HTMLDivElement>;
+    homeRef: RefObject<HTMLDivElement>;
 };
 
 //create context
@@ -22,6 +23,7 @@ export function MyProvider({ children }: { children: ReactNode }) {
     const aboutRef = useRef<HTMLDivElement>(null);
     const contactRef = useRef<HTMLDivElement>(null);
     const serviceRef = useRef<HTMLDivElement>(null);
+    const homeRef = useRef<HTMLDivElement>(null);
 
 
     const goToProjectSection = (value: RefObject<HTMLDivElement> | null) => {
@@ -36,6 +38,7 @@ export function MyProvider({ children }: { children: ReactNode }) {
         aboutRef,
         contactRef,
         serviceRef,
+        homeRef,
         goToProjectSection
     };
 

@@ -26,7 +26,7 @@ export default function Service() {
     return (
 
         <div className="min-h-[50vh] bg-(--color-bit) pb-10">
-            <div className="max-w-[90%] mx-auto">
+            <div className="max-w-[1400px] p-2 sm:p-0 mx-auto">
 
                 {/* Top Section */}
                 <div className="relative w-full sm:w-[80%] mx-auto">
@@ -64,10 +64,9 @@ export default function Service() {
                     </div>
                 </div>
 
-                {/* Middle Section */}
                 <div className="flex flex-col sm:flex-row justify-end items-start mt-10 sm:mt-20 gap-6 sm:gap-8">
 
-                    {/* Left Text */}
+
                     <div className="hidden sm:flex sm:w-[65%] flex-col items-center text-center">
                         <div className="max-w-3xl space-y-4">
                             <h1 className="text-3xl sm:text-6xl font-semibold leading-tight">
@@ -79,7 +78,7 @@ export default function Service() {
                         </div>
                     </div>
 
-                    {/* Right Info Box */}
+
                     <div className="sm:w-[30%] w-full bg-(--color-primary) h-auto sm:h-[200px] rounded-4xl p-4 flex flex-col overflow-hidden gap-4">
                         <div className="bg-black w-[4%] rounded-full h-full"></div>
                         <div className="px-2 flex-1 flex flex-col justify-between">
@@ -98,7 +97,7 @@ export default function Service() {
                                             key={index}
                                             src={item}
                                             alt={`user ${index}`}
-                                            className="w-8 h-8 sm:w-12 sm:h-12 rounded-full border-2 border-white z-0"
+                                            className="w-8 h-8  sm:w-12 sm:h-12 rounded-full border-2 border-white z-0"
                                             width={100}
                                             height={100}
                                         />
@@ -110,15 +109,14 @@ export default function Service() {
 
                 </div>
 
-                {/* Bottom Section */}
+
                 <div className="flex flex-col sm:flex-row justify-start mt-8 gap-6">
 
-                    {/* Left Bottom Card */}
                     <div className="relative w-full sm:w-[70%] rounded-xl overflow-hidden min-h-[25vh] sm:min-h-[30vh]">
                         <div
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
-                            className="relative sm:w-[60%] h-full rounded-4xl overflow-hidden shadow-lg bg-cover bg-center"
+                            className="relative sm:w-[60%] h-full hover:scale-105 rounded-4xl overflow-hidden shadow-lg bg-cover bg-center"
                             style={{ backgroundImage: `url(${image1.src})` }}
                         >
                             <div className="sm:w-3/5 p-4 sm:p-6 flex flex-col justify-center rounded-l-lg z-20">
@@ -134,16 +132,15 @@ export default function Service() {
                         </div>
                     </div>
 
-                    {/* Right Bottom Card */}
+
                     <div className="w-full sm:w-[27%] relative flex justify-center items-center">
                         <div className="relative w-full h-[25vh] sm:h-[400px] rounded-2xl overflow-hidden">
                             <div
-                                className="absolute inset-0 rounded-2xl bg-cover bg-center"
+                                className="absolute inset-0  rounded-2xl bg-cover bg-center"
                                 style={{ backgroundImage: `url(${girl.src})` }}
                             ></div>
                             <div className="absolute inset-0 bg-black/20 rounded-2xl"></div>
 
-                            {/* Floating Buttons */}
                             <div className="absolute bottom-3 left-1/2 -translate-x-1/2 flex gap-4 z-20 bg-black/30 rounded-full p-2">
                                 <button className="bg-white text-gray-800 w-10 h-10 sm:w-14 sm:h-14 rounded-full flex items-center justify-center shadow-lg hover:scale-110 transition">
                                     <FaMicrophone size={20} />

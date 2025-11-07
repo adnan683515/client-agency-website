@@ -11,21 +11,23 @@ import { useMyContext } from "./context/MyContext";
 export default function Home() {
   const { aboutRef,
     contactRef,
-    serviceRef, } = useMyContext()
+    serviceRef, homeRef } = useMyContext()
 
 
   return (
     <div >
 
 
-      <HeroSection></HeroSection>
+      <div ref={homeRef}>
+        <HeroSection></HeroSection>
+      </div>
 
-      <div ref={aboutRef} className="sm:my-[100px]">
+      <div ref={aboutRef} className="sm:my-[50px] my-0">
 
         <About></About>
       </div>
 
-      <div ref={serviceRef} className="my-[100px] ">
+      <div ref={serviceRef} className="my-[20px]">
         <div className="flex justify-center items-center animate-bounce">
           <span className="text-(--color-primary) mb-5 text-5xl">↓</span>
         </div>
