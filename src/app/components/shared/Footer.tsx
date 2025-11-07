@@ -12,7 +12,7 @@ export default function Footer() {
         serviceRef, goToProjectSection, homeRef } = useMyContext()
     return (
         <footer className="bg-black/90  backdrop-blur-lg text-white py-10 ">
-            <div className="max-w-[1400px] p-2 sm:p-0 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="max-w-[1400px] p-2 lg:p-0 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
 
                 <div>
 

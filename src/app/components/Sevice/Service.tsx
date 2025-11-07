@@ -26,7 +26,7 @@ export default function Service() {
     return (
 
         <div className="min-h-[50vh] bg-(--color-bit) pb-10">
-            <div className="max-w-[1400px] p-2 sm:p-0 mx-auto">
+            <div className="max-w-[1400px] p-2 sm:p-3 lg:p-0 mx-auto">
 
                 {/* Top Section */}
                 <div className="relative w-full sm:w-[80%] mx-auto">

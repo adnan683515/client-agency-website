@@ -10,10 +10,10 @@ import Link from 'next/link';
 
 export default function About() {
     return (
-        <div className='max-w-[1400px] p-2 sm:px-0 mx-auto flex sm:flex-row flex-col  justify-between'>
+        <div className='max-w-[1400px] p-2 sm:px-4 mx-auto flex lg:flex-row flex-col  justify-between'>
 
 
-            <div className='sm:max-w-[40%]  flex items-center '>
+            <div className='lg:max-w-[40%]  flex items-center '>
                 <div className='space-y-5  w-full'>
 
                     <div className='flex  gap-3'>
@@ -39,7 +39,7 @@ export default function About() {
 
                 </div>
             </div>
-            <div className='flex justify-center sm:max-w-[40%]  items-center'>
+            <div className='flex justify-center lg:max-w-[40%]  items-center'>
 
 
 

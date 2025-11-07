@@ -33,7 +33,7 @@ export default function Navbar() {
             className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${scrolled ? 'bg-black/60 backdrop-blur-md shadow-md text-white' : 'bg-transparent text-white'
                 }`}
         >
-            <div className="max-w-[1400px] mx-auto flex items-center justify-between py-4 sm:px-6 lg:px-0">
+            <div className="max-w-[1400px] mx-auto flex items-center justify-between py-4 sm:px-6 lg:px-2">
                 <Link href="/">
                     <Image src={Logo} alt="Infobitcode Logo" width={150} height={60} className="cursor-pointer" />
                 </Link>

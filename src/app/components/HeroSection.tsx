@@ -23,7 +23,7 @@ export default function HeroSection() {
 
             <div className="relative z-10 text-center text-white px-4">
                 <h1 className="text-[25px] sm:text-5xl md:text-6xl font-bold mb-4">
-                    We Build Brands That <span className={`text-[var(--color-secondary)]`}>Convert</span>
+                    We Build Brands That <span className={`text-(--color-secondary)`}>Convert</span>
                 </h1>
                 <p className="sm:text-lg md:text-xl mb-8">
                     <span >Creative solutions</span> for your business growth
