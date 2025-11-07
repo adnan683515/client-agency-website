@@ -19,7 +19,7 @@ export default function Contact() {
 
             <div className="flex flex-col md:flex-row gap-10  mx-auto">
 
-                <form className="flex-1 bg-white p-6 rounded-2xl space-y-4">
+                <form className="flex-1 bg-white  rounded-2xl space-y-4">
                     <div className="flex flex-col">
                         <label className="text-gray-700 font-medium mb-1" htmlFor="name">
                             Name

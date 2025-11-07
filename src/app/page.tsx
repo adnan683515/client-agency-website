@@ -1,34 +1,49 @@
+"use client"
 import Image from "next/image";
 import HeroSection from "./components/HeroSection";
 import About from "./components/About/About";
 import Service from "./components/Sevice/Service";
 import Contact from "./components/Contact/Contact";
+import { useMyContext } from "./context/MyContext";
+
 
 
 export default function Home() {
+  const { aboutRef,
+    contactRef,
+    serviceRef, } = useMyContext()
+
+
   return (
     <div >
 
+
       <HeroSection></HeroSection>
 
-      <div className="sm:my-[100px]">
+      <div ref={aboutRef} className="sm:my-[100px]">
 
         <About></About>
       </div>
 
-      <div className="my-[100px] ">
+      <div ref={serviceRef} className="my-[100px] ">
         <div className="flex justify-center items-center animate-bounce">
-          <span className="text-[var(--color-primary)] mb-5 text-5xl">↓</span>
+          <span className="text-(--color-primary) mb-5 text-5xl">↓</span>
         </div>
-        <Service></Service>
+
+        <div >
+          <Service></Service>
+        </div>
       </div>
 
 
       <div>
         <div className="flex justify-center items-center animate-bounce">
-          <span className="text-[var(--color-primary)]  text-5xl">↓</span>
+          <span className="text-(--color-primary)  text-5xl">↓</span>
         </div>
-        <Contact></Contact>
+
+        <div ref={contactRef}>
+          <Contact></Contact>
+        </div>
       </div>
 
     </div>
