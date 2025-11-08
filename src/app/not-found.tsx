@@ -10,7 +10,7 @@ export default function NotFound() {
                 <h1 className="text-6xl font-bold mb-4">404</h1>
                 <p className="text-xl mb-6">Oops! The page you’re looking for doesn’t exist.</p>
                 <a
-                    href="/"
+                    href="https://adnan683515.github.io/client-agency-website/"
                     className="bg-(--color-secondary) text-white px-6 py-2 rounded-full hover:bg-(--color-bit) transition"
                 >
                     Go Home
