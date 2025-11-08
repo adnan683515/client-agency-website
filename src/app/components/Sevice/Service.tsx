@@ -28,21 +28,40 @@ export default function Service() {
         <div className="min-h-[50vh] bg-(--color-bit) pb-10">
             <div className="max-w-[1400px] p-2 sm:p-3 lg:p-0 mx-auto">
 
-                {/* Top Section */}
+
                 <div className="relative w-full sm:w-[80%] mx-auto">
                     <div className="flex flex-col justify-between sm:flex-row gap-6 pt-24 w-full ">
 
-                        {/* Left Card */}
-                        <div className="bg-(--color-secondary)   p-4 sm:min-h-[30vh] rounded-4xl sm:w-[40%]">
+
+
+                        <div className="bg-(--color-secondary) p-4 sm:min-h-[20vh] rounded-4xl sm:w-[40%] flex flex-col justify-between">
+
                             <div className="space-y-2">
-                                <h1 className="text-2xl sm:text-3xl text-amber-50 font-semibold">Chat for Impact</h1>
-                                <p className="text-sm sm:text-base">
-                                    Connect with founders, funders and builders in the Chat for Impact community.
+                                <h1 className="text-2xl sm:text-2xl text-amber-50 font-semibold">Chat for Impact</h1>
+                                <p className="text-sm sm:text-base text-amber-100">
+                                    Connect with founders, funders, and builders in the Chat for Impact community.
+                                    InfoBitCode helps you transform ideas into digital experiences that inspire and deliver results.
                                 </p>
+
+
+                                <ul className="list-disc list-inside text-amber-100 space-y-1 text-sm sm:text-base">
+                                    <li>Collaborate on innovative projects</li>
+                                    <li>Learn from digital strategy experts</li>
+                                    <li>Access resources and tools from InfoBitCode</li>
+                                </ul>
+                            </div>
+
+
+                            <div className="mt-4 pt-4 border-t border-amber-200 flex justify-between items-center">
+                                <span className="text-amber-50 font-medium text-sm sm:text-base">Join the Community</span>
+                                <button className="bg-amber-50 text-(--color-secondary) px-4 py-2 rounded-full text-sm sm:text-base hover:bg-amber-100 transition">
+                                    Get Started
+                                </button>
                             </div>
                         </div>
 
-                        {/* Right Card */}
+
+
                         <div
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
@@ -57,7 +76,7 @@ export default function Service() {
                             </div>
 
                             <div className="w-2/5 rounded-r-lg z-10">
-                                <div className="absolute inset-0 bg-black/50 rounded-r-lg"></div>
+                                <div className="absolute inset-0 bg-black/20 rounded-r-lg"></div>
                             </div>
                         </div>
 
@@ -116,7 +135,7 @@ export default function Service() {
                         <div
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
-                            className="relative sm:w-[60%] h-full hover:scale-105 rounded-4xl overflow-hidden shadow-lg bg-cover bg-center"
+                            className="relative sm:w-[60%] h-full hover:scale-105 transition duration-700 rounded-4xl overflow-hidden shadow-lg bg-cover bg-center"
                             style={{ backgroundImage: `url(${image1.src})` }}
                         >
                             <div className="sm:w-3/5 p-4 sm:p-6 flex flex-col justify-center rounded-l-lg z-20">
@@ -127,7 +146,7 @@ export default function Service() {
                             </div>
 
                             <div className="w-2/5 rounded-r-lg z-10">
-                                <div className="absolute inset-0 bg-black/50 rounded-r-lg"></div>
+                                <div className="absolute inset-0 bg-black/20 rounded-r-lg"></div>
                             </div>
                         </div>
                     </div>
