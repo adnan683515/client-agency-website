@@ -133,7 +133,7 @@ export default function Service() {
 
                 <div className="flex flex-col sm:flex-row justify-start mt-8 gap-6">
 
-                    <div className="relative w-full sm:w-[70%] rounded-xl overflow-hidden min-h-[25vh] sm:min-h-[30vh]">
+                    <div className="relative w-full sm:w-[70%] rounded-xl overflow-hidden h-[25vh] sm:min-h-[30vh]">
                         <div
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}

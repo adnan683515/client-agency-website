@@ -1,11 +1,14 @@
 "use client";
 
+import { useState, useEffect } from "react";
 import { Federo } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navber";
-import { usePathname } from "next/navigation";
 import Footer from "./components/shared/Footer";
-import { MyProvider } from '../app/context/MyContext'
+import { MyProvider } from "../app/context/MyContext";
+import Loading from "./components/shared/Loading";
+
+
 
 export const federo = Federo({
   weight: "400",
@@ -15,22 +18,30 @@ export const federo = Federo({
 });
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
+  const [loading, setLoading] = useState(true);
 
-
-  const hideNavbarRoutes = ["/ServicePage", '/ContactPage', '/'];
-
-  const hideNavbar = hideNavbarRoutes.includes(pathname);
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 1000);
+    return () => clearTimeout(timer);
+  }, []);
 
   return (
-    <html lang="bangla">
+    <html lang="bn">
       <body className={`${federo.className} antialiased`}>
-
         <MyProvider>
-          {hideNavbar && <Navbar />}
-          <div>{children}</div>
-          <Footer></Footer>
+          {loading ? (
+            <div className="w-screen h-screen flex items-center justify-center bg-white">
 
+              <Loading></Loading>
+
+            </div>
+          ) : (
+            <>
+              <Navbar />
+              <div>{children}</div>
+              <Footer />
+            </>
+          )}
         </MyProvider>
       </body>
     </html>

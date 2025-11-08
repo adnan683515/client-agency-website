@@ -18,16 +18,16 @@ export default function Home() {
     <div >
 
 
-      <div ref={homeRef}>
+      <div ref={homeRef} className="">
         <HeroSection></HeroSection>
       </div>
 
-      <div ref={aboutRef} className="sm:my-[50px] my-0">
+      <div ref={aboutRef} className="  sm:py-30  my-0">
 
         <About></About>
       </div>
 
-      <div ref={serviceRef} className="my-[20px]">
+      <div ref={serviceRef} className="my-[30px]">
         <div className="flex justify-center items-center animate-bounce">
           <span className="text-(--color-primary) mb-5 text-5xl">↓</span>
         </div>
