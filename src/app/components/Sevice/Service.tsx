@@ -1,7 +1,9 @@
 "use client"
 import React from 'react'
 import './service.css'
-import image1 from './../../assets/images/aboutImage1.jpg'
+import image1 from './../../assets/images/excited-by-good-news-motivated-colleagues-celebrating-corporate-success-together.jpg'
+import programmImage from './../../assets/images/medium-shot-colleagues-working-together.jpg'
+
 import girl from './../../assets/images/girl.jpg'
 import Image from 'next/image'
 import { useState } from "react";
@@ -69,8 +71,8 @@ export default function Service() {
                             style={{ backgroundImage: `url(${image1.src})` }}
                         >
                             <div className="sm:w-3/5 p-4 sm:p-6 flex flex-col justify-center rounded-l-lg z-20">
-                                <h2 className="text-lg sm:text-xl font-bold text-white">Acceleration Program</h2>
-                                <p className="text-white mt-2 text-sm sm:text-base">
+                                <h2 className="text-lg sm:text-xl font-bold text-black">Acceleration Program</h2>
+                                <p className="text-black mt-2 text-sm sm:text-base">
                                     Join a select cohort for a multi-week journey to develop, demo, and launch your chat for impact service.
                                 </p>
                             </div>
@@ -136,17 +138,17 @@ export default function Service() {
                             onMouseEnter={() => setIsHovered(true)}
                             onMouseLeave={() => setIsHovered(false)}
                             className="relative sm:w-[60%] h-full hover:scale-105 transition duration-700 rounded-4xl overflow-hidden shadow-lg bg-cover bg-center"
-                            style={{ backgroundImage: `url(${image1.src})` }}
+                            style={{ backgroundImage: `url(${programmImage.src})` }}
                         >
-                            <div className="sm:w-3/5 p-4 sm:p-6 flex flex-col justify-center rounded-l-lg z-20">
-                                <h2 className="text-lg sm:text-xl font-bold text-white">Impact Builders Program</h2>
-                                <p className="text-white mt-2 text-sm sm:text-base">
+                            <div className="sm:w-3/5 p-4 sm:p-6 flex flex-col justify-center rounded-l-lg z-100">
+                                <h2 className="text-lg sm:text-xl font-bold text-black">Impact Builders Program</h2>
+                                <p className="text-black mt-2 text-sm sm:text-base">
                                     Empowering creators to build impactful solutions through innovation and expert guidance.
                                 </p>
                             </div>
 
-                            <div className="w-2/5 rounded-r-lg z-10">
-                                <div className="absolute inset-0 bg-black/20 rounded-r-lg"></div>
+                            <div className="w-2/5 rounded-r-lg -z-10">
+                                <div className="absolute inset-0 bg-black/30 rounded-r-lg"></div>
                             </div>
                         </div>
                     </div>

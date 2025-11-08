@@ -15,7 +15,7 @@ import Image from "next/image";
 // import image  
 import image1 from "./../../assets/images/aboutImage1.jpg"
 import imag2 from './../../assets/images/aboutImage2.jpg'
-import image3 from './../../assets/images/aboutImage3.jpg'
+import image3 from './../../assets/images/day-office-travel-agency.jpg'
 
 export default function SwiperSection() {
     // Attach ref to SVG element
