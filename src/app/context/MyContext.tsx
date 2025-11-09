@@ -8,6 +8,8 @@ type MyContextValue = {
     contactRef: RefObject<HTMLDivElement>;
     serviceRef: RefObject<HTMLDivElement>;
     homeRef: RefObject<HTMLDivElement>;
+    lan: string;
+    setLan: React.Dispatch<React.SetStateAction<'en' | 'es'>>;
 };
 
 //create context
@@ -16,7 +18,7 @@ const MyContext = createContext<MyContextValue | undefined>(undefined);
 export function MyProvider({ children }: { children: ReactNode }) {
 
 
-
+    const [lan, setLan] = useState('en')
 
     //ref create
 
@@ -39,6 +41,7 @@ export function MyProvider({ children }: { children: ReactNode }) {
         contactRef,
         serviceRef,
         homeRef,
+        lan, setLan,
         goToProjectSection
     };
 

@@ -11,9 +11,9 @@ import { useMyContext } from '../context/MyContext';
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [menuOpen, setMenuOpen] = useState(false);
-    const [language, setLanguage] = useState('EN');
 
-    const { aboutRef, serviceRef, contactRef, homeRef, goToProjectSection } = useMyContext();
+
+    const { aboutRef, serviceRef, contactRef, homeRef, goToProjectSection, lan, setLan, } = useMyContext();
 
     const navLinks = [
         { label: 'Home', ref: homeRef },
@@ -22,11 +22,14 @@ export default function Navbar() {
         { label: 'Contact', ref: contactRef },
     ];
 
+
     useEffect(() => {
         const handleScroll = () => setScrolled(window.scrollY > 50);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
+
+
 
     return (
         <nav
@@ -38,6 +41,7 @@ export default function Navbar() {
                     <Image src={Logo} alt="Infobitcode Logo" width={150} height={60} className="cursor-pointer" />
                 </Link>
 
+                {/* Desktop nav links */}
                 <ul className="hidden md:flex items-center gap-8 text-[15px] font-medium">
                     {navLinks.map((ln, index) => (
                         <li
@@ -50,15 +54,18 @@ export default function Navbar() {
                     ))}
                 </ul>
 
+                {/* Language switch + Hamburger */}
                 <div className="flex items-center gap-4">
+                    {/* Desktop language switch */}
                     <button
-                        onClick={() => setLanguage(language === 'EN' ? 'ES' : 'EN')}
+                        onClick={() => setLan(lan === 'en' ? 'es' : 'en')}
                         className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-(--color-secondary) hover:bg-(--color-bit) transition"
                     >
                         <IoIosArrowBack size={20} className="rotate-180" />
-                        <span className="text-white text-sm">{language}</span>
+                        <span className="text-white text-sm">{lan.toUpperCase()}</span>
                     </button>
 
+                    {/* Mobile menu toggle */}
                     <button
                         className="md:hidden flex flex-col gap-1.5"
                         onClick={() => setMenuOpen(!menuOpen)}
@@ -80,6 +87,7 @@ export default function Navbar() {
                 </div>
             </div>
 
+            {/* Mobile menu */}
             <AnimatePresence>
                 {menuOpen && (
                     <motion.ul
@@ -90,20 +98,24 @@ export default function Navbar() {
                         className="md:hidden flex flex-col items-center backdrop-blur-sm text-white py-6 space-y-4"
                     >
                         {navLinks.map((ln, index) => (
-                            <li key={index} onClick={() => {
-                                goToProjectSection(ln.ref)
-                                setMenuOpen(false)
-                            }}>
+                            <li
+                                key={index}
+                                onClick={() => {
+                                    goToProjectSection(ln.ref);
+                                    setMenuOpen(false);
+                                }}
+                            >
                                 {ln.label}
                             </li>
                         ))}
 
+                        {/* Mobile language switch */}
                         <button
-                            onClick={() => setLanguage(language === 'EN' ? 'ES' : 'EN')}
+                            onClick={() => setLan(lan === 'en' ? 'es' : 'en')}
                             className="flex items-center gap-2 px-4 py-2 rounded-full bg-(--color-secondary) hover:bg-(--color-bit) transition"
                         >
                             <IoIosArrowBack size={20} className="rotate-180" />
-                            <span className="text-white text-sm">{language}</span>
+                            <span className="text-white text-sm">{lan.toUpperCase()}</span>
                         </button>
                     </motion.ul>
                 )}
