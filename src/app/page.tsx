@@ -23,7 +23,9 @@ export default function Home() {
       </div>
 
       <div ref={aboutRef} className="  sm:py-30  my-0">
-
+        <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <span className="text-[var(--color-primary)]  text-5xl">↓</span>
+        </div>
         <About></About>
       </div>
 

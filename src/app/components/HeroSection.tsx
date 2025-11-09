@@ -69,9 +69,7 @@ export default function HeroSection() {
                 </div>
             </div>
 
-            <div className="absolute bottom-20 left-1/2 transform -translate-x-1/2 animate-bounce">
-                <span className="text-[var(--color-primary)]  text-5xl">↓</span>
-            </div>
+
         </section>
     );
 }
