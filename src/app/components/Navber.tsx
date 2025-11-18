@@ -41,7 +41,7 @@ export default function Navbar() {
                     <Image src={Logo} alt="Infobitcode Logo" width={150} height={60} className="cursor-pointer" />
                 </Link>
 
-                {/* Desktop nav links */}
+      
                 <ul className="hidden md:flex items-center gap-8 text-[15px] font-medium">
                     {navLinks.map((ln, index) => (
                         <li
@@ -54,9 +54,8 @@ export default function Navbar() {
                     ))}
                 </ul>
 
-                {/* Language switch + Hamburger */}
                 <div className="flex items-center gap-4">
-                    {/* Desktop language switch */}
+    
                     <button
                         onClick={() => setLan(lan === 'en' ? 'es' : 'en')}
                         className="hidden md:flex items-center gap-2 px-4 py-2 rounded-full bg-(--color-secondary) hover:bg-(--color-bit) transition"
@@ -65,7 +64,7 @@ export default function Navbar() {
                         <span className="text-white text-sm">{lan.toUpperCase()}</span>
                     </button>
 
-                    {/* Mobile menu toggle */}
+                 
                     <button
                         className="md:hidden flex flex-col gap-1.5"
                         onClick={() => setMenuOpen(!menuOpen)}
@@ -87,7 +86,7 @@ export default function Navbar() {
                 </div>
             </div>
 
-            {/* Mobile menu */}
+
             <AnimatePresence>
                 {menuOpen && (
                     <motion.ul
@@ -109,7 +108,7 @@ export default function Navbar() {
                             </li>
                         ))}
 
-                        {/* Mobile language switch */}
+
                         <button
                             onClick={() => setLan(lan === 'en' ? 'es' : 'en')}
                             className="flex items-center gap-2 px-4 py-2 rounded-full bg-(--color-secondary) hover:bg-(--color-bit) transition"

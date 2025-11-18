@@ -11,7 +11,7 @@ type HeroContent = {
     portfolioBtn: string;
 };
 
-// Content mapping
+
 const heroContent: Record<'en' | 'fr' | 'es', HeroContent> = {
     en: {
         title: "We Build Brands That Convert",
@@ -34,15 +34,15 @@ const heroContent: Record<'en' | 'fr' | 'es', HeroContent> = {
 };
 
 export default function HeroSection() {
-    const { lan } = useMyContext(); // context থেকে language
+    const { lan } = useMyContext(); 
     const [locale, setLocale] = useState(lan || 'en');
 
-    // Sync locale with context `lan`
+
     useEffect(() => {
         if (lan && heroContent[lan]) {
             setLocale(lan);
         }
-    }, [lan]); // ✅ lan update হলে rerender হবে
+    }, [lan]);
 
     const content = heroContent[locale];
 

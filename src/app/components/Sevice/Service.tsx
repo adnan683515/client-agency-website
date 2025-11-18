@@ -6,7 +6,7 @@ import { FaVideo, FaMicrophone } from "react-icons/fa";
 import { IoCall } from "react-icons/io5";
 import { useMyContext } from '../../context/MyContext'
 
-// Images
+
 import image1 from './../../assets/images/excited-by-good-news-motivated-colleagues-celebrating-corporate-success-together.jpg'
 import programmImage from './../../assets/images/medium-shot-colleagues-working-together.jpg'
 import girl from './../../assets/images/girl.jpg'
@@ -17,7 +17,7 @@ import service3 from './../../assets/images/aboutImage3.jpg'
 
 const serviceImages = [service1, service2, service3, service4]
 
-// Content mapping
+
 const serviceContent: Record<'en' | 'es', {
     chatTitle: string;
     chatDesc: string;
@@ -107,7 +107,6 @@ export default function Service() {
                     </div>
                 </div>
 
-                {/* Weekly & Together */}
                 <div className="flex flex-col sm:flex-row justify-end items-start mt-10 sm:mt-20 gap-6 sm:gap-8">
                     <div className="hidden sm:flex sm:w-[65%] flex-col items-center text-center">
                         <div className="max-w-3xl space-y-4">
@@ -142,7 +141,7 @@ export default function Service() {
                     </div>
                 </div>
 
-                {/* Impact Program & Girl Image */}
+
                 <div className="flex flex-col sm:flex-row justify-start mt-8 gap-6">
                     <div className="relative w-full sm:w-[70%] rounded-xl overflow-hidden h-[25vh] sm:min-h-[30vh]">
                         <div

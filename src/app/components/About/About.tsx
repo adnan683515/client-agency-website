@@ -9,7 +9,6 @@ import SwiperSection from './SwiperSection';
 import Link from 'next/link';
 import { useMyContext } from '../../context/MyContext';
 
-// Content mapping
 const aboutContent: Record<'en' | 'es', {
     headingSmall: string;
     headingBig: string;
@@ -42,7 +41,7 @@ const aboutContent: Record<'en' | 'es', {
 
 export default function About() {
     const { lan } = useMyContext();
-    const content = aboutContent[lan === 'es' ? 'es' : 'en']; // fallback to English
+    const content = aboutContent[lan === 'es' ? 'es' : 'en'];
 
     return (
         <div className='max-w-[1400px] p-2 sm:px-4 mx-auto flex lg:flex-row flex-col justify-between'>

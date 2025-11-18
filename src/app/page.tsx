@@ -28,10 +28,7 @@ export default function Home() {
       </div>
 
       <div ref={serviceRef} className="my-[30px]">
-        <div className="flex justify-center items-center animate-bounce">
-          <span className="text-(--color-primary) mb-5 text-5xl">↓</span>
-        </div>
-
+      
         <div >
           <Service></Service>
         </div>
@@ -39,10 +36,7 @@ export default function Home() {
 
 
       <div>
-        <div className="flex justify-center items-center animate-bounce">
-          <span className="text-(--color-primary)  text-5xl">↓</span>
-        </div>
-
+   
         <div ref={contactRef}>
           <Contact></Contact>
         </div>

@@ -12,13 +12,13 @@ import "./style.css";
 import Image from "next/image";
 
 
-// import image  
+
 import image1 from "./../../assets/images/aboutImage1.jpg"
 import imag2 from './../../assets/images/aboutImage2.jpg'
 import image3 from './../../assets/images/day-office-travel-agency.jpg'
 
 export default function SwiperSection() {
-    // Attach ref to SVG element
+
     const progressCircle = useRef<SVGSVGElement>(null);
     const progressContent = useRef<HTMLSpanElement>(null);
 
@@ -65,7 +65,7 @@ export default function SwiperSection() {
                 <svg
                     className="w-full h-full text-amber-200"
                     viewBox="0 0 48 48"
-                    ref={progressCircle} // now correctly typed
+                    ref={progressCircle} 
                 >
                     <circle
                         cx="24"

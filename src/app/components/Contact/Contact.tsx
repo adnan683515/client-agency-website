@@ -2,7 +2,7 @@
 import React from 'react';
 import { useMyContext } from '../../context/MyContext';
 
-// Content mapping
+
 const contactContent: Record<'en' | 'es', {
     title: string;
     subtitle: string;
@@ -58,7 +58,7 @@ const contactContent: Record<'en' | 'es', {
 
 export default function Contact() {
     const { lan } = useMyContext();
-    const content = contactContent[lan === 'es' ? 'es' : 'en']; // fallback to English
+    const content = contactContent[lan === 'es' ? 'es' : 'en']; 
 
     return (
         <section
