@@ -18,8 +18,8 @@ const footerContent: Record<'en' | 'es', {
         description: "We craft stunning digital experiences for modern businesses. Let's bring your ideas to life!",
         quickLinks: ["About", "Services", "Contact"],
         contact: {
-            address: "123 Agency St., New York, NY",
-            email: "email@example.com",
+            address: "Paseo de La Castellana 194, Madrid, España",
+            email: "contact@infobitcode.com",
             phone: "+1 234 567 890"
         },
         copyright: "© 2025 Our Agency. All rights reserved."
