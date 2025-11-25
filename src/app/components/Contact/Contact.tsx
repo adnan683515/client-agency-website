@@ -2,7 +2,6 @@
 import React from 'react';
 import { useMyContext } from '../../context/MyContext';
 
-
 const contactContent: Record<'en' | 'es', {
     title: string;
     subtitle: string;
@@ -21,8 +20,8 @@ const contactContent: Record<'en' | 'es', {
     addressValue: string;
 }> = {
     en: {
-        title: "Get in Touch",
-        subtitle: "Have a project in mind or want to collaborate? Contact us and let's build something amazing together.",
+        title: "CONTACT — Contact",
+        subtitle: "Let's talk about your next project.\n\nAt Info Bit Code, we are ready to help you build the technology solution your business needs.\n\nTell us your idea, and we’ll guide you on the path to innovation.",
         nameLabel: "Name",
         namePlaceholder: "Your Name",
         emailLabel: "Email",
@@ -35,11 +34,11 @@ const contactContent: Record<'en' | 'es', {
         phoneTitle: "Phone",
         phoneValue: "+1 234 567 890",
         addressTitle: "Address",
-        addressValue: "123 InfoBitCode Street, Silicon Valley, CA"
+        addressValue: "Paseo de La Castellana 194, Madrid, Spain"
     },
     es: {
-        title: "Ponte en Contacto",
-        subtitle: "¿Tienes un proyecto en mente o quieres colaborar? Contáctanos y construyamos algo increíble juntos.",
+        title: "CONTACTO — Contacto",
+        subtitle: "Hablemos sobre tu próximo proyecto.\n\nEn Info Bit Code estamos listos para ayudarte a construir la solución tecnológica que tu empresa necesita.\n\nCuéntanos tu idea y te acompañamos en el camino hacia la innovación.",
         nameLabel: "Nombre",
         namePlaceholder: "Tu Nombre",
         emailLabel: "Correo Electrónico",
@@ -52,7 +51,7 @@ const contactContent: Record<'en' | 'es', {
         phoneTitle: "Teléfono",
         phoneValue: "+1 234 567 890",
         addressTitle: "Dirección",
-        addressValue: "123 Calle InfoBitCode, Silicon Valley, CA"
+        addressValue: "Paseo de La Castellana 194, Madrid, España"
     }
 };
 
@@ -65,13 +64,14 @@ export default function Contact() {
             id="contact"
             className="max-w-[1400px] py-10 px-2 mx-auto sm:px-6 lg:px-0"
         >
-            <div className="text-center max-w-3xl mx-auto mb-12">
+            <div className="text-center max-w-3xl mx-auto mb-12 whitespace-pre-line">
                 <h2 className="text-4xl font-bold text-gray-900">{content.title}</h2>
                 <p className="mt-4 text-gray-600">{content.subtitle}</p>
             </div>
 
             <div className="flex flex-col md:flex-row gap-10 mx-auto">
-                <form className="flex-1 bg-white rounded-2xl space-y-4">
+                {/* Contact Form */}
+                <form className="flex-1 bg-white rounded-2xl space-y-4 p-6">
                     <div className="flex flex-col">
                         <label className="text-gray-700 font-medium mb-1" htmlFor="name">{content.nameLabel}</label>
                         <input
@@ -110,6 +110,7 @@ export default function Contact() {
                     </button>
                 </form>
 
+                {/* Contact Info */}
                 <div className="flex-1 flex flex-col justify-center space-y-6">
                     <div className="bg-white p-6 rounded-2xl">
                         <h3 className="text-xl font-semibold text-gray-900 mb-2">{content.emailTitle}</h3>

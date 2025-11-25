@@ -12,26 +12,21 @@ type HeroContent = {
 };
 
 
-const heroContent: Record<'en' | 'fr' | 'es', HeroContent> = {
+const heroContent: Record<'en' | 'es', HeroContent> = {
     en: {
-        title: "We Build Brands That Convert",
-        subtitle: "Creative solutions for your business growth",
+        title: "Technology that drives your evolution",
+        subtitle: "At Info Bit Code, we transform ideas into powerful digital tools. We create intelligent technological solutions that optimize processes, strengthen your business, and connect you with the future.",
         quoteBtn: "Get a Quote",
         portfolioBtn: "View Portfolio"
     },
-    fr: {
-        title: "Nous Construisons des Marques qui Convertissent",
-        subtitle: "Solutions créatives pour la croissance de votre entreprise",
-        quoteBtn: "Obtenir un Devis",
-        portfolioBtn: "Voir le Portfolio"
-    },
     es: {
-        title: "Construimos Marcas que Convierten",
-        subtitle: "Soluciones creativas para el crecimiento de tu negocio",
+        title: "Tecnología que impulsa tu evolución",
+        subtitle: "En Info Bit Code convertimos ideas en herramientas digitales poderosas. Creamos soluciones tecnológicas inteligentes que optimizan procesos, fortalecen tu negocio y te conectan con el futuro.",
         quoteBtn: "Obtener una Cotización",
         portfolioBtn: "Ver Portafolio"
     }
 };
+
 
 export default function HeroSection() {
     const { lan } = useMyContext(); 
@@ -59,7 +54,7 @@ export default function HeroSection() {
                 <h1 className="text-[25px] sm:text-5xl md:text-6xl font-bold mb-4">
                     {content.title}
                 </h1>
-                <p className="sm:text-lg md:text-xl mb-8">
+                <p className="sm:text-lg md:text-xl sm:w-[50%] mx-auto mb-8">
                     {content.subtitle}
                 </p>
                 <div className="flex justify-center gap-5 sm:gap-4">

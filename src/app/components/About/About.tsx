@@ -9,35 +9,47 @@ import SwiperSection from './SwiperSection';
 import Link from 'next/link';
 import { useMyContext } from '../../context/MyContext';
 
+
 const aboutContent: Record<'en' | 'es', {
     headingSmall: string;
     headingBig: string;
     paragraph: string;
-    viewMoreText: string;
+    paragraph2: string;
+    strategyPoints: string[];
+
 }> = {
     en: {
         headingSmall: "About Us",
-        headingBig: "We’re the Creative Minds Building Tomorrow’s Brands",
-        paragraph: `At InfoBitCode, we craft digital experiences that connect ideas to innovation.
-    Our team of passionate designers, developers, and strategists work together to build brands that inspire trust and performance.
-    We turn information into impactful digital solutions — from sleek websites to full-scale brand systems.
-    Every pixel, every line of code, and every idea matters to us.
-    We believe technology should be simple, beautiful, and powerful.
-    With creativity and precision, InfoBitCode transforms your vision into digital reality.`,
-        viewMoreText: "View more..."
+        headingBig: "Innovation, Experience, and Technology That Transforms",
+        paragraph: `At Info Bit Code, we are a multidisciplinary team passionate about creating digital solutions that generate real impact.
+We design, develop, and implement modern, secure, and scalable software—always aligned with each client’s unique goals.`,
+        strategyPoints: [
+            "Cutting-edge technology",
+            "Agile and flexible processes",
+            "High technical expertise",
+            "Tailor-made solutions"
+        ],
+        paragraph2: `We believe innovation should be simple, useful, and accessible. That’s why we support our clients at every stage, from the initial idea to their ongoing growth.`,
+
     },
+
     es: {
         headingSmall: "Sobre Nosotros",
-        headingBig: "Somos las Mentes Creativas que Construyen las Marcas del Mañana",
-        paragraph: `En InfoBitCode, creamos experiencias digitales que conectan ideas con innovación.
-    Nuestro equipo de diseñadores, desarrolladores y estrategas apasionados trabaja en conjunto para construir marcas que inspiren confianza y rendimiento.
-    Convertimos la información en soluciones digitales impactantes — desde sitios web elegantes hasta sistemas de marca completos.
-    Cada píxel, cada línea de código y cada idea importa para nosotros.
-    Creemos que la tecnología debe ser simple, hermosa y poderosa.
-    Con creatividad y precisión, InfoBitCode transforma tu visión en realidad digital.`,
-        viewMoreText: "Ver más..."
+        headingBig: "Innovación, Experiencia y Tecnología que Transforma",
+        paragraph: `En Info Bit Code somos un equipo multidisciplinario apasionado por crear soluciones digitales que generan impacto real.
+Diseñamos, desarrollamos e implementamos software moderno, seguro y escalable, adaptado a los objetivos de cada cliente.
+`,
+        strategyPoints: [
+            "Tecnología de vanguardia",
+            "Procesos ágiles y flexibles",
+            "Alta especialización técnica",
+            "Soluciones hechas a medida"
+        ],
+        paragraph2: `Creemos que la innovación debe ser simple, útil y accesible. Por eso acompañamos a nuestros clientes en cada etapa del camino, desde la idea inicial hasta su crecimiento continuo.`
+
     }
 };
+
 
 export default function About() {
     const { lan } = useMyContext();
@@ -46,20 +58,30 @@ export default function About() {
     return (
         <div className='max-w-[1400px] p-2 sm:px-4 mx-auto flex lg:flex-row flex-col justify-between'>
             <div className='lg:max-w-[40%] flex items-center'>
-                <div className='space-y-5 w-full'>
+                <div className='space-y-3 w-full'>
                     <div className='flex gap-3'>
                         <div className='flex justify-center items-center'>
                             <FaArrowRight className='text-(--color-primary)' size={25} />
                         </div>
-                        <h1 className='text-[17px] sm:text-4xl text-(--color-secondary)'>{content.headingSmall}</h1>
+                        <h1 className='text-[17px] sm:text-2xl text-(--color-secondary)'>{content.headingSmall}</h1>
                     </div>
-                    <h1 className='sm:text-5xl font-semibold text-center sm:max-w-100%'>
+                    <h1 className='sm:text-3xl md:text-4xl font-semibold  text-center sm:text-start sm:max-w-100%'>
                         {content.headingBig.split('Creative').map((part, index, arr) =>
                             index === 1 ? <span key={index} className='text-(--color-secondary)'>Creative</span> : part
                         )}
                     </h1>
                     <p className='text-center sm:text-start'>
-                        {content.paragraph} <Link className='text-(--color-secondary)' href={'/'}>{content.viewMoreText}</Link>
+                        {content.paragraph}
+                    </p>
+                    <ul className="space-y-1">
+                        {content.strategyPoints?.map((point, index) => (
+                            <li key={index} className="text-start">
+                                • {point}
+                            </li>
+                        ))}
+                    </ul>
+                    <p className='text-center sm:text-start'>
+                        {content.paragraph2}
                     </p>
                     <div>
                         <MarqueeSection />
