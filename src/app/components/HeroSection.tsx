@@ -44,7 +44,7 @@ export default function HeroSection() {
     return (
         <section className="relative curved-edge border-none w-full min-h-screen sm:min-h-[95vh] flex items-center justify-center overflow-hidden">
             <video autoPlay loop muted className="absolute w-full h-full object-cover">
-                <source src='./hero_vedio1.mp4' type="video/mp4" />
+                <source src='./hero_vedio2.mp4' type="video/mp4" />
                 Your browser does not support the video tag.
             </video>
 
