@@ -14,7 +14,7 @@ import Image from "next/image";
 
 
 import image1 from "./../../assets/images/aboutImage1.jpg"
-import imag2 from './../../assets/images/aboutImage2.jpg'
+import imag2 from './../../assets/images/development-team.jpg'
 import image3 from './../../assets/images/day-office-travel-agency.jpg'
 
 export default function SwiperSection() {

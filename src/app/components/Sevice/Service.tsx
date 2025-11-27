@@ -9,7 +9,7 @@ import { useMyContext } from '../../context/MyContext'
 
 import image1 from './../../assets/images/excited-by-good-news-motivated-colleagues-celebrating-corporate-success-together.jpg'
 import programmImage from './../../assets/images/medium-shot-colleagues-working-together.jpg'
-import girl from './../../assets/images/girl.jpg'
+import girl from './../../assets/images/women-coding.jpg'
 import service4 from './../../assets/images/serviceImag4.jpg'
 import service1 from './../../assets/images/serviceImage.jpg'
 import service2 from './../../assets/images/serviceimag2.jpg'
@@ -22,7 +22,7 @@ const serviceContent: Record<'en' | 'es', {
     chatTitle: string;
     chatDesc: string;
     listItems: string[];
-    joinCommunity: string;
+  
     accelerationTitle: string;
     accelerationDesc: string;
     weeklyTitle: string;
@@ -36,7 +36,7 @@ const serviceContent: Record<'en' | 'es', {
         chatTitle: "Chat for Impact",
         chatDesc: "Connect with founders, funders, and builders in the Chat for Impact community. InfoBitCode helps you transform ideas into digital experiences that inspire and deliver results.",
         listItems: ["Collaborate on innovative projects", "Learn from digital strategy experts", "Access resources and tools from InfoBitCode"],
-        joinCommunity: "Join the Community",
+      
         accelerationTitle: "Acceleration Program",
         accelerationDesc: "Join a select cohort for a multi-week journey to develop, demo, and launch your chat for impact service.",
         weeklyTitle: "Weekly Training",
@@ -54,7 +54,7 @@ const serviceContent: Record<'en' | 'es', {
         chatTitle: "Chat para Impacto",
         chatDesc: "Conéctate con fundadores, financiadores y creadores en la comunidad Chat para Impacto. InfoBitCode te ayuda a transformar ideas en experiencias digitales que inspiran y generan resultados.",
         listItems: ["Colabora en proyectos innovadores", "Aprende de expertos en estrategia digital", "Accede a recursos y herramientas de InfoBitCode"],
-        joinCommunity: "Únete a la Comunidad",
+
         accelerationTitle: "Programa de Aceleración",
         accelerationDesc: "Únete a una cohorte selecta para un viaje de varias semanas para desarrollar, demostrar y lanzar tu servicio Chat para Impacto.",
         weeklyTitle: "Entrenamiento Semanal",
@@ -69,15 +69,14 @@ const serviceContent: Record<'en' | 'es', {
 }
 
 
-// Software Development
 
-// We specialize in transforming concepts into complete digital products.
-// Using agile methodologies and best engineering practices, we develop efficient, adaptable, and future-ready software.
 
 export default function Service() {
     const [isHovered, setIsHovered] = useState(false);
-    const { lan } = useMyContext()
+    const { lan, contactRef ,goToProjectSection } = useMyContext()
     const content = serviceContent[lan === 'es' ? 'es' : 'en'];
+
+
 
     return (
         <div className="min-h-[50vh] bg-(--color-bit) pb-10">
@@ -121,12 +120,12 @@ export default function Service() {
                                         ].map((item, idx) => <li key={idx}>{item}</li>)}
                                 </ul>
                             </div>
-                            <div className="mt-4 pt-4 border-t border-amber-200 flex justify-between items-center">
-                                <span className="text-amber-50 font-medium text-sm sm:text-base">
+                            <div className="mt-4 pt-4 border-t border-amber-200 flex justify-end items-center">
+                                {/* <span className="text-amber-50 font-medium text-sm sm:text-base">
                                     {lan === 'es' ? "Únete a la Comunidad" : "Join the Community"}
-                                </span>
-                                <button className="bg-amber-50 text-(--color-secondary) px-4 py-2 rounded-full text-sm sm:text-base hover:bg-amber-100 transition">
-                                    {lan === 'es' ? "Comenzar" : "Get Started"}
+                                </span> */}
+                                <button onClick={()=>goToProjectSection(contactRef)} className="bg-amber-50 text-(--color-secondary) px-4 py-2 rounded-full text-sm sm:text-base hover:bg-amber-100 transition">
+                                    {lan === 'es' ? "Contacto" : "Contact"}
                                 </button>
                             </div>
                         </div>

@@ -16,20 +16,20 @@ const heroContent: Record<'en' | 'es', HeroContent> = {
     en: {
         title: "Technology that drives your evolution",
         subtitle: "At Info Bit Code, we transform ideas into powerful digital tools. We create intelligent technological solutions that optimize processes, strengthen your business, and connect you with the future.",
-        quoteBtn: "Get a Quote",
+        quoteBtn: "Get Started",
         portfolioBtn: "View Portfolio"
     },
     es: {
         title: "Tecnología que impulsa tu evolución",
         subtitle: "En Info Bit Code convertimos ideas en herramientas digitales poderosas. Creamos soluciones tecnológicas inteligentes que optimizan procesos, fortalecen tu negocio y te conectan con el futuro.",
-        quoteBtn: "Obtener una Cotización",
+        quoteBtn: "Comenzar",
         portfolioBtn: "Ver Portafolio"
     }
 };
 
 
 export default function HeroSection() {
-    const { lan } = useMyContext(); 
+    const { lan ,goToProjectSection ,serviceRef} = useMyContext(); 
     const [locale, setLocale] = useState(lan || 'en');
 
 
@@ -72,6 +72,7 @@ export default function HeroSection() {
                         rounded="rounded-full"
                         hover_border="hover:border hover:border-[var(--color-secondary)]"
                         hover_bg_color="hover:bg-[var(--color-bit)]"
+                        onClick={()=>goToProjectSection(serviceRef)}
                     />
 
                     <Button
