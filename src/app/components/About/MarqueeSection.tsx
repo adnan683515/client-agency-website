@@ -3,16 +3,17 @@
 import Marquee from "react-fast-marquee";
 
 
-import { FaReact, FaNodeJs, FaFigma, FaGithub, FaAws, FaHtml5, FaCss3Alt, FaPython } from "react-icons/fa";
+import { FaReact, FaNodeJs, FaFigma, FaGithub, FaAws, FaHtml5, FaCss3Alt, FaPython ,FaSnowflake  } from "react-icons/fa";
 import { SiNextdotjs, SiTailwindcss, SiTypescript, SiMongodb, SiFirebase, SiVercel, SiDocker, SiKubernetes, SiGraphql, SiPostgresql, SiRedis, SiJest, SiExpress } from "react-icons/si";
-
+import { SiDbt } from "react-icons/si";
 export default function MarqueeSection() {
 
     return (
         <div className="py-7">
             <Marquee speed={50} gradient={false} pauseOnHover={true}>
                 
-        
+                <SiDbt className="text-5xl mx-5" style={{ color: "#FF694B" }} ></SiDbt>
+                <FaSnowflake className="text-5xl mx-5" style={{ color: "#29B5E8" }}></FaSnowflake>
                 <FaReact className="text-5xl mx-5" style={{ color: "#61DAFB" }} />
 
                
