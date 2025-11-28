@@ -49,8 +49,8 @@ export default function Footer() {
                 </div>
 
                 <div>
-                    <h2 className="text-xl font-bold mb-4">{lan === 'es' ? 'Enlaces rápidos' : 'Quick Links'}</h2>
-                    <ul className="space-y-2 text-gray-200">
+                    <h2 className="sm:text-xl font-bold mb-4">{lan === 'es' ? 'Enlaces rápidos' : 'Quick Links'}</h2>
+                    <ul className="space-y-2 text-[15px]  text-gray-200">
                         <li onClick={() => goToProjectSection(aboutRef)}>{content.quickLinks[0]}</li>
                         <li onClick={() => goToProjectSection(serviceRef)}>{content.quickLinks[1]}</li>
                         <li onClick={() => goToProjectSection(contactRef)}>{content.quickLinks[2]}</li>
@@ -58,10 +58,10 @@ export default function Footer() {
                 </div>
 
                 <div>
-                    <h2 className="text-xl font-bold mb-4">{lan === 'es' ? 'Contacto' : 'Contact'}</h2>
-                    <p className="text-gray-200 mb-2">{content.contact.address}</p>
-                    <p className="text-gray-200 mb-2">{content.contact.email}</p>
-                    <p className="text-gray-200">{content.contact.phone}</p>
+                    <h2 className="sm:text-xl font-bold mb-4">{lan === 'es' ? 'Contacto' : 'Contact'}</h2>
+                    <p className="text-gray-200 text-[15px] mb-2">{content.contact.address}</p>
+                    <p className="text-gray-200 text-[15px] mb-2">{content.contact.email}</p>
+                    <p className="text-gray-200 text-[15px]">{content.contact.phone}</p>
                     <div className="flex space-x-4 mt-4">
                         <a href="#" className="hover:text-white"><i className="fab fa-facebook-f"></i></a>
                         <a href="#" className="hover:text-white"><i className="fab fa-twitter"></i></a>

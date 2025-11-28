@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Federo } from "next/font/google";
+import { Federo ,Manrope } from "next/font/google";
 import "./globals.css";
 import Navbar from "./components/Navber";
 import Footer from "./components/shared/Footer";
@@ -17,6 +17,12 @@ export const federo = Federo({
   subsets: ["latin"],
 });
 
+export const menrope = Manrope({
+  weight: ["400","500","600","700"],
+  style: 'normal',
+  variable: "--font-menrope"
+})
+
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   const [loading, setLoading] = useState(true);
 
@@ -27,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
   return (
     <html lang="bn">
-      <body className={`${federo.className} antialiased`}>
+      <body className={`${menrope.className} antialiased`}>
         <MyProvider>
           {loading ? (
             <div className="w-screen h-screen flex items-center justify-center bg-white">

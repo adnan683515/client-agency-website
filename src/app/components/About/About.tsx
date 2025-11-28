@@ -59,28 +59,25 @@ export default function About() {
         <div className='max-w-[1400px] p-2 sm:px-4 mx-auto flex lg:flex-row flex-col justify-between'>
             <div className='lg:max-w-[40%] flex items-center'>
                 <div className='space-y-3 w-full'>
-                    <div className='flex gap-3'>
-                        <div className='flex justify-center items-center'>
-                            <FaArrowRight className='text-(--color-primary)' size={25} />
-                        </div>
-                        <h1 className='text-[17px] sm:text-2xl text-(--color-secondary)'>{content.headingSmall}</h1>
+                    <div className=''>
+                        <h1 className=' text-center text-2xl  sm:text-start font-semibold sm:text-2xl text-(--color-secondary)'>{content.headingSmall}</h1>
                     </div>
-                    <h1 className='sm:text-3xl md:text-4xl font-semibold  text-center sm:text-start sm:max-w-100%'>
+                    <h1 className='sm:text-3xl text-2xl md:text-4xl font-bold  text-start sm:text-start sm:max-w-100%'>
                         {content.headingBig.split('Creative').map((part, index, arr) =>
                             index === 1 ? <span key={index} className='text-(--color-secondary)'>Creative</span> : part
                         )}
                     </h1>
-                    <p className='text-center sm:text-start'>
+                    <p className='text-start sm:text-start'>
                         {content.paragraph}
                     </p>
-                    <ul className="space-y-1">
+                    <ul className="space-y-1 ">
                         {content.strategyPoints?.map((point, index) => (
                             <li key={index} className="text-start">
                                 • {point}
                             </li>
                         ))}
                     </ul>
-                    <p className='text-center sm:text-start'>
+                    <p className='text-start sm:text-start'>
                         {content.paragraph2}
                     </p>
                     <div>

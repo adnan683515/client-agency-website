@@ -65,7 +65,7 @@ export default function Contact() {
             className="max-w-[1400px] py-10 px-2 mx-auto sm:px-6 lg:px-0"
         >
             <div className="text-center max-w-3xl mx-auto mb-12 whitespace-pre-line">
-                <h2 className="text-4xl font-bold text-gray-900">{content.title}</h2>
+                <h2 className="text-2xl sm:text-3xl text-center  font-bold text-gray-900">{content.title}</h2>
                 <p className="mt-4 text-gray-600">{content.subtitle}</p>
             </div>
 
@@ -111,17 +111,17 @@ export default function Contact() {
                 </form>
 
                 {/* Contact Info */}
-                <div className="flex-1 flex flex-col justify-center space-y-6">
+                <div className="flex-1 flex flex-col justify-center space-y-1 sm:space-y-6">
                     <div className="bg-white p-6 rounded-2xl">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">{content.emailTitle}</h3>
+                        <h3 className="sm:text-xl font-semibold text-gray-900 mb-2">{content.emailTitle}</h3>
                         <p className="text-gray-600">{content.emailValue}</p>
                     </div>
                     <div className="bg-white p-6 rounded-2xl">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">{content.phoneTitle}</h3>
+                        <h3 className="sm:text-xl font-semibold text-gray-900 mb-2">{content.phoneTitle}</h3>
                         <p className="text-gray-600">{content.phoneValue}</p>
                     </div>
                     <div className="bg-white p-6 rounded-2xl">
-                        <h3 className="text-xl font-semibold text-gray-900 mb-2">{content.addressTitle}</h3>
+                        <h3 className="sm:text-xl font-semibold text-gray-900 mb-2">{content.addressTitle}</h3>
                         <p className="text-gray-600">{content.addressValue}</p>
                     </div>
                 </div>
