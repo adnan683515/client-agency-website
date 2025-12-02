@@ -75,7 +75,8 @@ export default function Contact() {
             'service_fjwqogp',        // Your EmailJS Service ID
             'template_e622k9n',       // Your EmailJS Template ID
             { name, email, message },
-            'rwmKx06rth7DFVw8J'       // Your Public Key
+            // 'rwmKx06rth7DFVw8J'       // Your Public Key
+            process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY
         )
         .then(() => {
             setStatus('Email sent successfully!');
