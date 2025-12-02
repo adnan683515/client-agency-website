@@ -1,27 +1,8 @@
 'use client';
 import React, { useState } from 'react';
 import { useMyContext } from '../../context/MyContext';
-import emailjs from '@emailjs/browser';
 
-
-
-const contactContent: Record<'en' | 'es', {
-    title: string;
-    subtitle: string;
-    nameLabel: string;
-    namePlaceholder: string;
-    emailLabel: string;
-    emailPlaceholder: string;
-    messageLabel: string;
-    messagePlaceholder: string;
-    sendBtn: string;
-    emailTitle: string;
-    emailValue: string;
-    phoneTitle: string;
-    phoneValue: string;
-    addressTitle: string;
-    addressValue: string;
-}> = {
+const contactContent: Record<'en' | 'es', any> = {
     en: {
         title: "CONTACT — Contact",
         subtitle: "Let's talk about your next project.\n\nAt Info Bit Code, we are ready to help you build the technology solution your business needs.\n\nTell us your idea, and we’ll guide you on the path to innovation.",
@@ -60,32 +41,35 @@ const contactContent: Record<'en' | 'es', {
 
 export default function Contact() {
     const { lan } = useMyContext();
-    const content = contactContent[lan === 'es' ? 'es' : 'en']; 
+    const content = contactContent[lan === 'es' ? 'es' : 'en'];
     const [status, setStatus] = useState('');
 
-    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-
         const form = e.currentTarget;
-        const name = (form.elements.namedItem('name') as HTMLInputElement).value;
-        const email = (form.elements.namedItem('email') as HTMLInputElement).value;
-        const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+        const data = {
+            name: (form.elements.namedItem('name') as HTMLInputElement).value,
+            email: (form.elements.namedItem('email') as HTMLInputElement).value,
+            message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+        };
 
-        emailjs.send(
-            'service_fjwqogp',        // Your EmailJS Service ID
-            'template_e622k9n',       // Your EmailJS Template ID
-            { name, email, message },
-            'rwmKx06rth7DFVw8J'       // Your Public Key
-       
-        )
-        .then(() => {
-            setStatus('Email sent successfully!');
-            form.reset();
-        })
-        .catch((err) => {
+        try {
+            const res = await fetch('https://formspree.io/f/xblnyywo', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            });
+
+            if (res.ok) {
+                setStatus('Email sent successfully!');
+                form.reset();
+            } else {
+                setStatus('Failed to send email.');
+            }
+        } catch (err) {
             console.error(err);
             setStatus('Failed to send email.');
-        });
+        }
     };
 
     return (
@@ -99,7 +83,6 @@ export default function Contact() {
             </div>
 
             <div className="flex flex-col md:flex-row gap-10 mx-auto">
-
                 <form onSubmit={handleSubmit} className="flex-1 bg-white rounded-2xl space-y-4 p-6">
                     <div className="flex flex-col">
                         <label className="text-gray-700 font-medium mb-1" htmlFor="name">{content.nameLabel}</label>
