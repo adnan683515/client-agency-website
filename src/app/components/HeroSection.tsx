@@ -75,22 +75,7 @@ export default function HeroSection() {
                         onClick={()=>goToProjectSection(serviceRef)}
                     />
 
-                    <Button
-                        btn_name={content.portfolioBtn}
-                        mobile_px="px-3"
-                        laptop_px="sm:px-6"
-                        mobile_py="py-1"
-                        laptop_py="sm:py-3"
-                        mobile_text_size="text-[12px]"
-                        tablet_text_size="sm:text-[20px]"
-                        bg_color="bg-transparent"
-                        text_color="text-white"
-                        hover_text_color="hover:text-black"
-                        hover_bg_color="hover:bg-[var(--color-bit)]"
-                        rounded="rounded-full"
-                        border="border"
-                        hover_border="hover:border-[var(--color-bit)]"
-                    />
+                  
                 </div>
             </div>
         </section>

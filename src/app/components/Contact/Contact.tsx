@@ -1,6 +1,9 @@
 'use client';
-import React from 'react';
+import React, { useState } from 'react';
 import { useMyContext } from '../../context/MyContext';
+import emailjs from '@emailjs/browser';
+
+
 
 const contactContent: Record<'en' | 'es', {
     title: string;
@@ -58,6 +61,31 @@ const contactContent: Record<'en' | 'es', {
 export default function Contact() {
     const { lan } = useMyContext();
     const content = contactContent[lan === 'es' ? 'es' : 'en']; 
+    const [status, setStatus] = useState('');
+
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+
+        const form = e.currentTarget;
+        const name = (form.elements.namedItem('name') as HTMLInputElement).value;
+        const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+        const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+
+        emailjs.send(
+            'service_fjwqogp',        // Your EmailJS Service ID
+            'template_e622k9n',       // Your EmailJS Template ID
+            { name, email, message },
+            'rwmKx06rth7DFVw8J'       // Your Public Key
+        )
+        .then(() => {
+            setStatus('Email sent successfully!');
+            form.reset();
+        })
+        .catch((err) => {
+            console.error(err);
+            setStatus('Failed to send email.');
+        });
+    };
 
     return (
         <section
@@ -65,19 +93,21 @@ export default function Contact() {
             className="max-w-[1400px] py-10 px-2 mx-auto sm:px-6 lg:px-0"
         >
             <div className="text-center max-w-3xl mx-auto mb-12 whitespace-pre-line">
-                <h2 className="text-2xl sm:text-3xl text-center  font-bold text-gray-900">{content.title}</h2>
+                <h2 className="text-2xl sm:text-3xl text-center font-bold text-gray-900">{content.title}</h2>
                 <p className="mt-4 text-gray-600">{content.subtitle}</p>
             </div>
 
             <div className="flex flex-col md:flex-row gap-10 mx-auto">
-                {/* Contact Form */}
-                <form className="flex-1 bg-white rounded-2xl space-y-4 p-6">
+
+                <form onSubmit={handleSubmit} className="flex-1 bg-white rounded-2xl space-y-4 p-6">
                     <div className="flex flex-col">
                         <label className="text-gray-700 font-medium mb-1" htmlFor="name">{content.nameLabel}</label>
                         <input
                             type="text"
                             id="name"
+                            name="name"
                             placeholder={content.namePlaceholder}
+                            required
                             className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-bit)]"
                         />
                     </div>
@@ -87,7 +117,9 @@ export default function Contact() {
                         <input
                             type="email"
                             id="email"
+                            name="email"
                             placeholder={content.emailPlaceholder}
+                            required
                             className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-bit)]"
                         />
                     </div>
@@ -96,8 +128,10 @@ export default function Contact() {
                         <label className="text-gray-700 font-medium mb-1" htmlFor="message">{content.messageLabel}</label>
                         <textarea
                             id="message"
+                            name="message"
                             rows={5}
                             placeholder={content.messagePlaceholder}
+                            required
                             className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:ring-2 focus:ring-[var(--color-bit)]"
                         />
                     </div>
@@ -108,9 +142,10 @@ export default function Contact() {
                     >
                         {content.sendBtn}
                     </button>
+
+                    {status && <p className="mt-2 text-center text-gray-700">{status}</p>}
                 </form>
 
-                {/* Contact Info */}
                 <div className="flex-1 flex flex-col justify-center space-y-1 sm:space-y-6">
                     <div className="bg-white p-6 rounded-2xl">
                         <h3 className="sm:text-xl font-semibold text-gray-900 mb-2">{content.emailTitle}</h3>
