@@ -52,9 +52,8 @@ export default function Contact() {
             email: (form.elements.namedItem('email') as HTMLInputElement).value,
             message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
         };
-
         try {
-            const res = await fetch('https://formspree.io/f/xblnyywo', {
+            const res = await fetch('https://formspree.io/f/xkgdbvyb', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(data)
@@ -127,7 +126,7 @@ export default function Contact() {
                         {content.sendBtn}
                     </button>
 
-                    {status && <p className="mt-2 text-center text-gray-700">{status}</p>}
+                    {status && <p className="mt-2 text-start text-gray-700">{status}</p>}
                 </form>
 
                 <div className="flex-1 flex flex-col justify-center space-y-1 sm:space-y-6">
